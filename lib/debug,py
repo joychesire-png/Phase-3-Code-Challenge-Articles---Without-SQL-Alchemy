@@ -1,0 +1,25 @@
+from lib.author import Author
+from lib.magazine import Magazine
+from lib.article import Article
+
+# Create objects
+a1 = Author("Alice")
+a2 = Author("Bob")
+
+m1 = Magazine("Tech Today", "Technology")
+m2 = Magazine("Health Weekly", "Health")
+
+# Add articles
+a1.add_article(m1, "Python Basics")
+a1.add_article(m2, "Healthy Living")
+a2.add_article(m1, "AI Trends")
+a2.add_article(m1, "More AI")
+
+# Manual checks
+print(a1.articles())          # List of Article objects
+print(a1.magazines())         # List of Magazine objects
+print(a1.topic_areas())       # ['Technology', 'Health']
+
+print(m1.article_titles())    # ['Python Basics', 'AI Trends', 'More AI']
+print(m1.contributors())      # [Alice, Bob]
+print(Magazine.top_publisher())  # Magazine object with most articles
